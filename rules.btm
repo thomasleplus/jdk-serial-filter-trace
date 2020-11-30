@@ -1,0 +1,12 @@
+COMPILE
+RULE trace ObjectInputStream.filterCheck entry
+CLASS java.io.ObjectInputStream
+METHOD filterCheck
+AT ENTRY
+IF $1 != null
+  && !$1.isPrimitive()
+  && !($1.isArray() && $1.getComponentType().isPrimitive())
+  && !($1.isArray() && $1.getComponentType().isArray() && $1.getComponentType().getComponentType().isPrimitive())
+DO
+  traceln("SERIALFILTER " + $0.getClass().getName() + ".filterCheck(" + $1.getName() + "," + $2 + ")")
+ENDRULE
