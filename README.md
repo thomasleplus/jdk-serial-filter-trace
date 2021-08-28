@@ -1,4 +1,4 @@
-# jdk-serial-filter-trace
+# JDK Serial Filter Trace
 
 A JBoss Byteman rule to debug the trace the JDK deserialization filtering
 
