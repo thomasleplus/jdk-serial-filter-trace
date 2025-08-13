@@ -8,7 +8,7 @@ Java 17 introduced Flight Recorder events for deserialization which provides a n
 
 ## TLDR
 
-```
+```shell
 java -javaagent:/path/to/byteman.jar=script:/path/to/rules.btm,boot:/path/to/byteman.jar ...
 ```
 
